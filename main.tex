@@ -1,0 +1,34 @@
+\documentclass[12pt]{ctexart}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{array}
+\usepackage{caption}
+
+\begin{document}
+
+\begin{table}[htbp]
+    \centering
+    \caption{真空阀的型号}
+    \renewcommand{\arraystretch}{1.6}
+    \setlength{\tabcolsep}{8pt}
+    \begin{tabular}{|>{\centering\arraybackslash}m{1.2cm}
+                    |>{\centering\arraybackslash}m{1.8cm}
+                    |>{\centering\arraybackslash}m{2.6cm}
+                    |>{\centering\arraybackslash}m{3.6cm}
+                    |>{\centering\arraybackslash}m{1.2cm}
+                    |>{\centering\arraybackslash}m{1.8cm}
+                    |>{\centering\arraybackslash}m{2.6cm}
+                    |>{\centering\arraybackslash}m{3.6cm}|}
+        \hline
+        序号 & 型号 & 铸件重(kg) & 压铸机的合模力(kN) &
+        序号 & 型号 & 铸件重(kg) & 压铸机的合模力(kN) \\
+        \hline
+        1 & MINI  & 0.1$\sim$0.6 & $\sim$4000 &
+        3 & MAXI  & 4$\sim$8     & 6000$\sim$20000 \\
+        \hline
+        2 & MIDIO & 0.6$\sim$4   & 2000$\sim$8000 &
+        4 & MACRO & 8$\sim$16    & 16000$\sim$30000 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\end{document}

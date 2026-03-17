@@ -1,0 +1,18 @@
+{
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 800,
+
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.closeOnFileDelete": false,
+
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  "latex-workshop.synctex.afterBuild.enabled": false,
+  "python.testing.pytestArgs": [
+    "auxil"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "liveServer.settings.multiRootWorkspaceName": "latex0223"
+}

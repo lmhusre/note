@@ -1,0 +1,24 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "LaTeX: 启动监听编译",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "build_tex_watch.py",
+        "main.tex",
+        "--quiet"
+      ],
+      "isBackground": true,
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "clear": true,
+        "echo": false,
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}
