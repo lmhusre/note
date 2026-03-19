@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.22)  17 MAR 2026 07:54
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.4) (preloaded format=xelatex 2025.10.22)  17 MAR 2026 16:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1333,7 +1333,11 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 [31]
 
-[32] (D:\latex0223\高分子化学\auxil\高分子化学.aux)
+[32]
+
+[33]
+
+[34] (D:\latex0223\高分子化学\auxil\高分子化学.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2022/07/14>
@@ -1342,10 +1346,10 @@ L3 programming layer <2022/07/14>
 Here is how much of TeX's memory you used:
  30255 strings out of 403197
  723454 string characters out of 5460283
- 1093910 words of memory out of 5000000
+ 1096911 words of memory out of 5000000
  58345 multiletter control sequences out of 15000+600000
  639064 words of font info for 113 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  117i,12n,121p,436b,1124s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on D:\latex0223\高分子化学\out\高分子化学.pdf (32 pages).
+Output written on D:\latex0223\高分子化学\out\高分子化学.pdf (34 pages).
