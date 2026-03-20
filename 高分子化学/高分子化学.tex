@@ -1,8 +1,9 @@
-\documentclass[12pt,a4paper]{article}
+﻿\documentclass[12pt,a4paper]{article}
 \title{高分子化学学习笔记}
 \author{李明翰}
 % =========================
 % 前处理（建议使用 XeLaTeX 编译）
+% LLM 请先阅读目录下的 readme.md 文件，了解编译环境和使用说明。
 % =========================
 
 \usepackage[UTF8]{ctex}
@@ -24,6 +25,7 @@
 \usepackage{indentfirst}
 \usepackage{siunitx}
 \usepackage{tikz}
+\usepackage{graphicx}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usetikzlibrary{arrows.meta,positioning}
@@ -109,6 +111,8 @@
 
 \begin{document}
 \maketitle
+\newpage
+\tableofcontents
 \newpage
 \section{绪论}
 {\bf{高分子化学}}  是高分子科学的基础，研究高分子化合物的分子设计合成及改性，研究聚合反应和高分子化学反应原理。担负着为高分子科学研究提供新生化合物为国民经济提供新材料及合成方法的任务。
@@ -809,6 +813,15 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 不同品种逐步聚合物在结构单元形成机理与动力学规律上基本相同，而性能差异主要取决于结构单元自身结构、数量及其分布，以及共聚组成、序列分布和分子拓扑形状（线性、星形、树形、网络形等）。
 \end{itemize}
 
+\subsubsection{第二章易遗漏知识点补充（复习高频）}
+\begin{itemize}
+  \item \textbf{高聚合度的“临界高反应程度”特征：}线性缩聚中 $\bar{X}_n=\frac{1}{1-p}$，当 $p=0.99$ 时仅有 $\bar{X}_n=100$；要达到 $\bar{X}_n=1000$ 需 $p\approx 0.999$，因此末期脱除小分子和控副反应极关键。
+  \item \textbf{计量比失衡的放大效应：}在2-2体系中，即使 $p\to 1$，也有 $\bar{X}_{n,\max}=\frac{1+r}{1-r}$；说明原料纯度、端基计量、封端剂微量偏差都会显著影响分子量。
+  \item \textbf{Carothers方程适用前提：}官能团等活性、无分子内环化、统计均匀反应。偏离这些前提时，理论值与实测值会有系统偏差。
+  \item \textbf{凝胶点预测的方向性误差：}Carothers法通常偏高估计凝胶点反应程度，Flory统计法常偏低；工程上应结合实测流变/凝胶时间进行工艺窗口校正。
+  \item \textbf{平衡缩聚的工艺本质：}高温、减压、惰性气带出副产物（如水、醇、酚）是提高分子量的核心手段，热力学推动与传质强化同等重要。
+\end{itemize}
+
 \subsubsection{聚酯（PE）}
 \paragraph{定义与分类}
 \begin{itemize}
@@ -823,6 +836,20 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 涤纶聚酯PET目前主要采用直接酯化法：精对苯二甲酸（PTA）与乙二醇（EG）先酯化、再缩聚、后终缩聚以获得高分子量产品。
   \item PET是合成纤维第一大品种，具有强度高、耐溶剂、耐腐蚀等特点；同类聚酯还有PBT、PTT等。
 \end{itemize}
+PET可用下式概括其单体、重复结构单元和形成过程：
+\[
+\begin{aligned}
+n\,\mathrm{HO{-}CH_2{-}CH_2{-}OH}+n\,\mathrm{HOOC{-}C_6H_4{-}COOH}
+&\rightarrow
+\left[-\mathrm{O{-}CH_2{-}CH_2{-}O{-}CO{-}C_6H_4{-}CO-}\right]_n \\
+&\quad +2n\,\mathrm{H_2O}
+\end{aligned}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pet_formula.png}
+\caption{PET公式图（来源：第二章PDF第58页）}
+\end{figure}
 
 \subsubsection{聚碳酸酯（PC）}
 \paragraph{定义与性能}
@@ -836,6 +863,23 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 酯交换法以双酚A和碳酸二苯酯为原料，通常使碳酸二苯酯过量，分阶段进行酯交换，排出苯酚并得到高分子量PC。
   \item 光气直接法则将双酚A钠盐水溶液与光气有机溶液进行界面缩聚；由于界面缩聚近似不可逆，对原料等当量比要求不如线性缩聚那样严格，工业上常加入少量单官能酚进行封端以控制分子量。
 \end{itemize}
+双酚A型PC的重复结构单元与反应式可表示为：
+\[
+\left[-\mathrm{O{-}Ar{-}C(CH_3)_2{-}Ar{-}O{-}CO-}\right]_n
+\]
+\[
+\begin{aligned}
+n\,\mathrm{HO{-}Ar{-}C(CH_3)_2{-}Ar{-}OH}+n\,\mathrm{(PhO)_2CO}
+&\rightarrow
+\left[-\mathrm{O{-}Ar{-}C(CH_3)_2{-}Ar{-}O{-}CO-}\right]_n \\
+&\quad +2n\,\mathrm{PhOH}
+\end{aligned}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pc_formula.png}
+\caption{PC公式图（来源：第二章PDF第59页）}
+\end{figure}
 
 \subsubsection{聚酰胺（PA）}
 \paragraph{分类与代表}
@@ -858,6 +902,25 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 对位芳纶可由对苯二胺与对苯二甲酸（或对苯二甲酰氯）体系制备，是典型高强高模纤维材料来源。
   \item 对位芳纶属于典型溶致液晶高分子，代表性商品纤维为 Kevlar。
 \end{itemize}
+其中PA66与PA6常用反应式分别为：
+\[
+\begin{aligned}
+n\,\mathrm{H_2N{-}(CH_2)_6{-}NH_2}+n\,\mathrm{HOOC{-}(CH_2)_4{-}COOH}
+&\rightarrow
+\left[-\mathrm{NH{-}(CH_2)_6{-}NH{-}CO{-}(CH_2)_4{-}CO-}\right]_n \\
+&\quad +2n\,\mathrm{H_2O}
+\end{aligned}
+\]
+\[
+n\,\mathrm{(\varepsilon\text{-}caprolactam)}
+\rightarrow
+\left[-\mathrm{NH{-}(CH_2)_5{-}CO-}\right]_n
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pa_formula.png}
+\caption{PA公式图（来源：第二章PDF第60--61页）}
+\end{figure}
 
 \subsubsection{聚酰亚胺与高性能聚合物}
 \paragraph{高性能聚合物设计思路}
@@ -873,6 +936,18 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 当链段中的$-R-$为脂族结构时，产物往往更易溶融；$-R-$为芳环结构时，产物通常不溶不熔。
   \item 同类高性能逐步聚合物还包括聚苯并咪唑（PBI）和梯形聚合物；PBI常见原料组合可为3,3'-二氨基联苯胺与间苯二甲酸二苯酯等。
 \end{itemize}
+其形成过程常写为：
+\[
+\mathrm{H_2N{-}Ar{-}NH_2}+\mathrm{aromatic\ dianhydride}
+\rightarrow\mathrm{poly(amic\ acid)}
+\xrightarrow[\Delta]{\text{imidization}}
+\left[-\mathrm{Ar{-}imide{-}Ar-}\right]_n+n\,\mathrm{H_2O}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pi_formula.png}
+\caption{PI公式图（来源：第二章PDF第66页）}
+\end{figure}
 
 \subsubsection{聚氨酯与聚脲}
 \paragraph{聚氨酯（PU）}
@@ -888,11 +963,36 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 单组分聚氨酯涂料通常依赖端基与环境水分反应固化；双组分体系则在施工时混合异氰酸酯组分与含羟基树脂组分并同步交联。
   \item 聚氨酯橡胶以线性异氰酸酯封端预聚物为基础，经化学交联形成弹性体；与TPU相比，其力学性能、耐热性和耐溶剂性更好，但属于不可逆交联体系，难以重复加工。
 \end{itemize}
+线性PU的重复结构单元与反应式可写为：
+\[
+\left[-\mathrm{NH{-}COO{-}R_2{-}OCO{-}NH{-}R_1-}\right]_n
+\]
+\[
+n\,\mathrm{OCN{-}R_1{-}NCO}+n\,\mathrm{HO{-}R_2{-}OH}
+\rightarrow
+\left[-\mathrm{NH{-}COO{-}R_2{-}OCO{-}NH{-}R_1-}\right]_n
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pu_formula.png}
+\caption{PU公式图（来源：第二章PDF第68页）}
+\end{figure}
 
 \paragraph{聚脲}
 \begin{itemize}
   \item 聚脲中的脲基团极性更大、氢键更强，因此具有较高熔点、较大韧性以及较好的耐磨、耐腐蚀和耐热性能。其合成路线包括二元胺与二异氰酸酯的聚加成，以及二元胺与光气或碳酸二苯酯的界面缩聚/氨酯交换反应。
 \end{itemize}
+聚脲主反应可表示为：
+\[
+n\,\mathrm{OCN{-}R_1{-}NCO}+n\,\mathrm{H_2N{-}R_2{-}NH_2}
+\rightarrow
+\left[-\mathrm{NH{-}CO{-}NH{-}R_2{-}NH{-}CO{-}NH{-}R_1-}\right]_n
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/polyurea_formula.png}
+\caption{聚脲公式图（来源：第二章PDF第72页）}
+\end{figure}
 
 \subsubsection{环氧树脂与聚苯醚}
 \paragraph{环氧树脂（EP）}
@@ -902,12 +1002,36 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 环氧树脂的交联主要利用端环氧基和侧羟基，可选用多元胺或酸酐类交联剂。伯胺类交联剂可在室温下使环氧基开环；叔胺虽无活泼氢，但在较高温度下也可促进开环；酸酐类交联剂则通常需要更高温度，通过酯化和环氧开环等途径实现交联。
   \item 环氧树脂的主要特点是粘接力强，耐腐蚀、耐溶剂、耐热和电性能好，因此广泛用于胶粘剂、涂料和纤维增强复合材料等领域。
 \end{itemize}
+其预聚与固化可概括为：
+\[
+\mathrm{BPA + epichlorohydrin}\rightarrow\mathrm{DGEBA\ prepolymer}
+\]
+\[
+\mathrm{epoxy\ group}+\mathrm{RNH_2}
+\rightarrow\mathrm{\beta\text{-}hydroxy\ amine\ linkage}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/epoxy_formula.png}
+\caption{环氧树脂公式图（来源：第二章PDF第73页）}
+\end{figure}
 
 \paragraph{聚苯醚（PPO）}
 \begin{itemize}
   \item 环氧树脂与聚苯醚的共同点之一是主链中含有半芳或全芳醚键。
   \item 聚苯醚（PPO）是线性全芳醚聚合物，属于性能优异的工程塑料，常由2,6-二甲基苯酚经氧化耦合反应制得。
 \end{itemize}
+PPO可写为：
+\[
+n\,\mathrm{HO{-}C_6H_2(CH_3)_2}
+\xrightarrow[\text{Cu/amine}]{\mathrm{O_2}}
+\left[-\mathrm{O{-}C_6H_2(CH_3)_2-}\right]_n+n\,\mathrm{H_2O}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/ppo_formula.png}
+\caption{PPO公式图（来源：第二章PDF第75页）}
+\end{figure}
 
 \subsubsection{聚砜与其他含硫杂链聚合物}
 \begin{itemize}
@@ -917,6 +1041,32 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 聚苯硫醚（PPS）属于芳族聚硫醚，具有较高耐热性和耐化学药品性。芳族PPS是结晶性工程塑料，常由对二氯苯与硫化钠经Wurtz反应合成；若引入醚键和硫醚键并存的结构，还可改善柔性和加工性能。
   \item 典型芳族PPS的热学参数常见为 $T_g\approx 85\,^{\circ}\mathrm{C}$、$T_m\approx 285\,^{\circ}\mathrm{C}$；脂族聚硫醚通常$T_g$较低、强度偏低，应用有限。
 \end{itemize}
+对应的形成反应可分别表示为：
+\[
+\begin{aligned}
+n\,\mathrm{NaO{-}Ar{-}C(CH_3)_2{-}Ar{-}ONa}+n\,\mathrm{Cl{-}Ar{-}SO_2{-}Ar{-}Cl}
+&\rightarrow
+\left[-\mathrm{Ar{-}O{-}Ar{-}SO_2{-}Ar{-}O-}\right]_n \\
+&\quad +2n\,\mathrm{NaCl}
+\end{aligned}
+\]
+\[
+n\,\mathrm{Cl{-}C_6H_4{-}Cl}+n\,\mathrm{Na_2S}
+\rightarrow
+\left[-\mathrm{C_6H_4{-}S-}\right]_n+2n\,\mathrm{NaCl}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/psf_formula.png}
+\caption{聚砜及相关高性能聚合物公式图（来源：第二章PDF第76页）}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pps_formula.png}
+\caption{PPS公式图（来源：第二章PDF第77页）}
+\end{figure}
+
 
 \subsubsection{酚醛树脂（PF）}
 \paragraph{组成与结构特征}
@@ -930,6 +1080,20 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 碱催化酚醛预聚物称Resoles，通常在甲醛过量条件下制备。反应先发生亲核加成形成酚醇或羟甲基酚，再进一步缩合生成多元酚醇型预聚物；此类预聚物继续加热即可交联固化，常用于胶粘剂、木工板和层压板等。
   \item 酸催化酚醛预聚物称Novolacs，通常在苯酚过量条件下制备。其机理是甲醛羰基先质子化，再在苯酚邻、对位发生亲电芳香取代，继而缩合形成由亚甲基桥随机连接的热塑性酚醛树脂。该类预聚物本身不会直接交联，需与乌洛托品（六亚甲基四胺）混合后加热，借由其分解提供亚甲基而发生交联固化。
 \end{itemize}
+PF网络的典型连接键与形成过程可写为：
+\[
+\mathrm{Ar{-}CH_2{-}Ar}\quad\text{与}\quad\mathrm{Ar{-}CH_2{-}O{-}CH_2{-}Ar}
+\]
+\[
+\mathrm{phenol + formaldehyde}\rightarrow\mathrm{resol/novolac\ prepolymer}
+\xrightarrow[\Delta]{\text{curing}}
+\mathrm{crosslinked\ PF\ network}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/pf_formula.png}
+\caption{PF公式图（来源：第二章PDF第79页）}
+\end{figure}
 
 \subsubsection{氨基树脂}
 \paragraph{组成与机理}
@@ -945,6 +1109,29 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \item 密胺树脂又称三聚氰胺树脂，其合成机理与脲醛树脂相似：预聚时在微碱性条件下先形成羟甲基衍生物，固化时即使不在酸性条件下，也可仅靠加热通过羟基与氨基缩合而交联。
   \item MF的硬度和耐水性通常优于UF，常用于制作色彩鲜艳的餐具，也可用于电器制品。
 \end{itemize}
+UF/MF体系可用下式概括：
+\[
+\text{UF: }\mathrm{H_2N{-}CO{-}NH_2 + CH_2O}\rightarrow\mathrm{methylol\ urea}
+\]
+\[
+\text{MF: }\mathrm{melamine + CH_2O}\rightarrow\mathrm{methylol\ melamine}
+\xrightarrow[\Delta]{\text{acid/heat}}
+\mathrm{crosslinked\ UF/MF\ network}+\mathrm{H_2O}
+\]
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/uf_formula.png}
+\caption{UF公式图（来源：第二章PDF第83页）}
+\end{figure}
+
+\begin{figure}[!htbp]
+\centering
+\includegraphics[width=0.96\textwidth]{figures/ch2_formula_only/mf_formula.png}
+\caption{MF公式图（来源：第二章PDF第84页）}
+\end{figure}
+
+
+
 \newpage
 \section{自由基聚合}
 \subsection{引言}
@@ -1003,6 +1190,14 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
 \end{enumerate}
 
 \subsection{自由基聚合机理}
+\subsubsection{自由基的活性}
+自由基活性与结构密切相关。过于活泼的$\mathrm{H\cdot}$、$\mathrm{CH_3\cdot}$易与双键以外部位或杂质反应；过于稳定的共轭自由基又难以引发聚合，因此真正适合引发聚合的自由基应当“活性适中”。
+\begin{itemize}
+  \item 初级自由基必须先形成，再与单体加成成为单体自由基；
+  \item 受共轭效应和位阻效应显著稳定的自由基，多表现为稳定自由基或阻聚剂；
+  \item 引发能力的本质是：既能形成自由基，又能较快加成到$\mathrm{C=C}$上。
+\end{itemize}
+
 \subsubsection{链引发}
 链引发一般包括两步：
 \begin{enumerate}[1)]
@@ -1015,7 +1210,10 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
   \mathrm{R\cdot + M \xrightarrow{k_i} RM\cdot}
   \]
 \end{enumerate}
-特点：分解常为吸热过程，$E_d$较高，$k_d$较小，引发通常是速率控制步骤。
+\[
+R_d=k_d[I],\qquad R_i=2fk_d[I]
+\]
+特点：分解常为吸热过程，$E_d\approx105\sim150\,\mathrm{kJ\cdot mol^{-1}}$，$k_d$常在$10^{-4}\sim10^{-6}\,\mathrm{s^{-1}}$量级；引发通常是整个连锁过程最慢的步骤。
 
 \subsubsection{链增长}
 \[
@@ -1025,7 +1223,7 @@ Flory统计法较实测值较小，分子内环化，官能团非等活性等因
 \[
 k_{p1}=k_{p2}=\cdots=k_p
 \]
-连接方式可有头-尾、头-头，其中头-尾连接通常占主导。
+链增长常为放热过程，聚合热约$55\sim95\,\mathrm{kJ\cdot mol^{-1}}$，活化能常在$20\sim34\,\mathrm{kJ\cdot mol^{-1}}$。连接方式可有头-尾、头-头，其中头-尾连接通常占主导。
 
 \subsubsection{链终止}
 自由基活性高，终止通常为双基终止：
@@ -1033,18 +1231,24 @@ k_{p1}=k_{p2}=\cdots=k_p
   \item 偶合终止：两链自由基直接结合成共价键。
   \item 歧化终止：一条链夺取另一条链原子（常为氢），形成一饱和一不饱和链端。
 \end{itemize}
-终止活化能低，反应很快，且易受扩散控制。
+终止活化能低，常在$8\sim21\,\mathrm{kJ\cdot mol^{-1}}$，反应很快，且易受扩散控制。常见经验结论：
+\begin{itemize}
+  \item 苯乙烯聚合多以偶合终止为主；
+  \item MMA在$60^\circ\mathrm{C}$以上常以歧化终止为主，低于该温度两种方式可并存。
+\end{itemize}
 
 \subsubsection{链转移}
 \[
 \mathrm{RM\cdot + YS \xrightarrow{k_{tr}} RMH + S\cdot}
 \]
-链转移使原活性链失活，新的自由基可能继续引发；会降低分子量，并可能引入支化（如LDPE中向大分子转移）。
+链转移可发生在单体、引发剂、溶剂和大分子上。原活性链失活后，新的自由基可能继续引发；因此链转移会降低分子量，并可能引入支化（如LDPE中向大分子转移）。
 
 \subsubsection{机理特征小结}
 \begin{itemize}
   \item 微观上是慢引发、快增长、速终止；
+  \item 链引发最慢，因此引发速率往往是控制聚合速率的关键；
   \item 只有链增长使聚合度增加；
+  \item 反应混合物的主体通常是单体和聚合物，中间自由基浓度极低；
   \item 延长聚合时间主要提高转化率，对分子量影响相对较小。
 \end{itemize}
 
@@ -1054,9 +1258,9 @@ k_{p1}=k_{p2}=\cdots=k_p
 
 \subsubsection{常见引发剂类型}
 \begin{itemize}
-  \item 偶氮类：如AIBN，分解放出$\mathrm{N_2}$，便于测定分解速率，活性常偏低至中等。
-  \item 有机过氧类：如BPO、DCP、过氧酯、过氧碳酸酯，适用温区广。
-  \item 无机过氧类：如过硫酸盐，水溶性好，适于乳液/水溶液聚合。
+  \item 偶氮类：如AIBN（低活性）、ABVN（中活性），分解放出$\mathrm{N_2}$，便于测定分解速率。
+  \item 有机过氧类：过氧化二烷基、过氧化二酰基多为低活性（如DCP、BPO）；过氧酯多为中活性（如BPP）；过氧化二碳酸酯多为高活性。
+  \item 无机过氧类：如过硫酸钾、过硫酸铵，水溶性好，适于乳液/水溶液聚合。
 \end{itemize}
 
 \subsubsection{氧化-还原引发体系}
@@ -1078,19 +1282,27 @@ k_{p1}=k_{p2}=\cdots=k_p
 \[
 t_{1/2}=\frac{\ln2}{k_d}
 \]
-通常$k_d$越大或$t_{1/2}$越短，引发剂活性越高。
+\[
+k_d=A_d\exp\!\left(-\frac{E_d}{RT}\right)
+\]
+通常$k_d$越大或$t_{1/2}$越短，引发剂活性越高。工业上常用$60^\circ\mathrm{C}$下的半衰期粗分：$t_{1/2}<1\,\mathrm{h}$为高活性，$1\sim6\,\mathrm{h}$为中活性，$>6\,\mathrm{h}$为低活性。
 
 \subsubsection{引发剂效率}
 引发效率$f$一般在$0.5\sim0.8$，受诱导分解与笼蔽效应影响。
 \begin{itemize}
   \item 诱导分解：初级自由基先与引发剂反应，降低有效引发比例。
   \item 笼蔽效应：初级自由基在“笼子”中复合或副反应，未及时逃逸至单体双键。
+  \item AIBN几乎无诱导分解，而ROOH等氢过氧化物更易发生诱导分解。
+  \item 引发剂浓度越高，越易诱导分解；活性较高的单体（如AN、St）通常更易获得较高$f$值。
 \end{itemize}
 
 \subsubsection{引发剂选择原则}
 \begin{itemize}
   \item 与聚合温度匹配：通常选$t_{1/2}$与聚合时间同数量级的引发剂。
   \item 与聚合方法匹配：本体/悬浮/有机溶液常用油溶性引发剂，乳液/水溶液常用水溶性体系。
+  \item 选择初级自由基能与单体快速接触的引发剂。
+  \item 工业间歇聚合常采用高-低（或高-中）活性引发剂复配，或先常温聚合再升温后聚合，以尽量使聚合过程匀速并减少残余引发剂。
+  \item 低活性引发剂用量常偏大，高活性用量偏小，典型范围约为单体质量的$0.01\%\sim0.1\%$。
   \item 兼顾安全、颜色、毒性、储运与成本。
 \end{itemize}
 
@@ -1100,17 +1312,29 @@ t_{1/2}=\frac{\ln2}{k_d}
 
 \subsubsection{光引发}
 光引发包括光直接引发、光引发剂引发和光敏剂间接引发。
+\[
+E=\frac{N_Ahc}{\lambda}
+\]
 \begin{itemize}
+  \item 当$\lambda=300\,\mathrm{nm}$时，$1\,\mathrm{mol}$光子的能量约$400\,\mathrm{kJ\cdot mol^{-1}}$，足以超过多数化学反应活化能；
   \item 选择性强，可通过开关光源实现速率可控；
   \item 总活化能低，适于低温操作，副反应少；
   \item 典型应用：光固化油墨、光刻胶、印刷制版等。
 \end{itemize}
 
-\subsubsection{辐射、等离子体与微波引发}
+\subsubsection{辐射引发}
 \begin{itemize}
-  \item 辐射引发：能量高、穿透强，可用于固相聚合。
-  \item 等离子体引发：可用于表面改性、成膜、固定化等。
-  \item 微波引发：兼具热效应和非热效应，可加速聚合并降低引发剂用量。
+  \item 高能辐射线可使分子形成离子自由基，能量远高于普通光引发；
+  \item 选择性较差，可在多种化学键上断裂并生成多种初级自由基；
+  \item 穿透力强，可用于固相聚合。
+\end{itemize}
+
+\subsubsection{等离子体与微波引发}
+\begin{itemize}
+  \item 等离子体引发可在气相引发、液相或固相表面增长，常用于酶固定化、表面接枝和成膜。
+  \item 等离子体态聚合可使许多有机物解离、重排并再结合，常形成交联膜层，常见于CVD类表面沉积。
+  \item 高分子等离子体表面处理可实现刻蚀、粗面化、引入极性基团或表面氟化，从而改善粘接、亲水或防水防油性能。
+  \item 微波引发兼具热效应与非热效应；无引发剂时可促进热引发，有引发剂时可加速聚合并降低引发剂用量或聚合温度。
 \end{itemize}
 
 \subsection{聚合速率}
@@ -1124,6 +1348,13 @@ R_p=-\frac{d[M]}{dt}=\frac{d[P]}{dt}
 C=\frac{[M]_0-[M]}{[M]_0}\times100\%
 \]
 典型$C$-$t$曲线呈$S$形，可分诱导期、初期（近匀速）、中期（自动加速）、后期（减速）。
+
+\subsubsection{微观聚合动力学的研究方法}
+\begin{itemize}
+  \item 直接法：测未反应单体量，如溴量法测双键变化；或定期取样沉淀、干燥并称量聚合物。
+  \item 间接法：利用比容、黏度、光谱等物理量变化反推聚合进程。
+  \item 膨胀计法的核心依据是：聚合物密度通常高于单体，聚合过程中体系体积收缩，且体积变化与转化率近似呈线性关系。
+\end{itemize}
 
 \subsubsection{低转化率下微观动力学（自由基聚合普遍式）}
 采用长链假定、等活性假定和稳态假定：
@@ -1142,6 +1373,13 @@ R_p=k_p[M][M\cdot]=k_p\left(\frac{fk_d}{k_t}\right)^{1/2}[I]^{1/2}[M]
 R_p\propto [I]^{1/2}[M]
 \]
 
+\subsubsection{基元反应速率常数与速率范围}
+\begin{itemize}
+  \item 链引发：$k_d\sim10^{-4}\sim10^{-6}\,\mathrm{s^{-1}}$，$f\approx0.6\sim0.8$，$[I]$常为$10^{-2}\sim10^{-4}\,\mathrm{mol\cdot L^{-1}}$，故$R_i$常仅$10^{-8}\sim10^{-10}\,\mathrm{mol\cdot L^{-1}\cdot s^{-1}}$。
+  \item 链增长：$k_p\sim10^2\sim10^4\,\mathrm{L\cdot mol^{-1}\cdot s^{-1}}$，$[M]$常为$1\sim10\,\mathrm{mol\cdot L^{-1}}$，故$R_p$约$10^{-4}\sim10^{-6}\,\mathrm{mol\cdot L^{-1}\cdot s^{-1}}$。
+  \item 链终止：$k_t\sim10^6\sim10^8\,\mathrm{L\cdot mol^{-1}\cdot s^{-1}}$，但$[M\cdot]$仅$10^{-7}\sim10^{-9}\,\mathrm{mol\cdot L^{-1}}$，故$R_t$与$R_i$同量级。
+\end{itemize}
+
 \subsubsection{温度影响}
 当引发剂引发时，总活化能近似为：
 \[
@@ -1152,6 +1390,9 @@ E=E_p-\frac{1}{2}E_t+\frac{1}{2}E_d
 \subsubsection{凝胶效应与自动加速}
 中期体系黏度升高，$k_t$因扩散受限显著下降，而$k_p$下降较小，导致$k_p/k_t^{1/2}$上升，出现自动加速（Trommsdorff效应）。
 \begin{itemize}
+  \item 自动加速的起点并不一定等于凝胶效应的起点；扩散控制可能更早出现，但未必足以抵消$[M]$和$[I]$的降低。
+  \item 对均相聚合体系，明显自动加速通常只在双基终止体系中更突出；单基终止体系虽也可有扩散控制，但自动加速常不明显。
+  \item 非均相沉淀聚合若增长与终止所受扩散限制差异很大，也可能出现明显自动加速。
   \item 后果：放热积累，可能引发爆聚风险。
   \item 工艺对策：强化传热、降低体系黏度、采用悬浮/乳液/溶液等分散式聚合方式。
 \end{itemize}
@@ -1186,6 +1427,11 @@ E=E_p-\frac{1}{2}E_t+\frac{1}{2}E_d
   \item 向溶剂：溶液聚合中常使分子量下降；
   \item 向大分子：导致支化或交联。
 \end{itemize}
+\[
+R_{tr,M}=k_{tr,M}[RM\cdot][M],\quad
+R_{tr,I}=k_{tr,I}[RM\cdot][I],\quad
+R_{tr,S}=k_{tr,S}[RM\cdot][S]
+\]
 
 \subsubsection{Mayo方程（复习核心公式）}
 \[
@@ -1200,6 +1446,8 @@ E=E_p-\frac{1}{2}E_t+\frac{1}{2}E_d
 \subsubsection{典型结论}
 \begin{itemize}
   \item 常见单体$C_M$较小，常在$10^{-5}$量级；
+  \item VC向单体链转移较强，因此PVC工业上常通过温度来调控聚合度；
+  \item 在本体聚合中，可通过$\left(\frac{2R_p}{k_p[M]^2}\right)\frac{1}{\bar{X}_n}$对$[I]/[M]$作图求$C_I$；在溶液聚合中，可通过$1/\bar{X}_n$对$[S]/[M]$作图求$C_S$；
   \item 硫醇类$C_S$较大，常作分子量调节剂（链转移剂）；
   \item 向大分子转移会引入长支链或短支链（LDPE的重要结构来源）。
 \end{itemize}
@@ -1245,6 +1493,13 @@ R_i=\frac{n[Z]_0}{t_i}
 \subsubsection{自阻聚现象}
 烯丙基单体常表现出明显自阻聚：链转移倾向大于链增长（$k_{tr}\gg k_p$），故聚合速率低、产物分子量低。
 
+\subsubsection{阻聚效率与诱导期利用}
+\begin{itemize}
+  \item 阻聚效率常用阻聚常数$C_z=k_z/k_p$衡量，$C_z$越大，说明阻聚剂越容易与自由基竞争。
+  \item 高效阻聚剂在诱导期内的消耗常近似与其浓度无关，可近似视为零级过程。
+  \item DPPH、$\mathrm{FeCl_3}$等可快速按近似$1{:}1$捕捉自由基，常用于比色法测定引发速率。
+\end{itemize}
+
 \subsection{自由基寿命和链增长、链终止速率常数的测定}
 自由基寿命定义为稳态下活性自由基从生成到消失的平均存活时间：
 \[
@@ -1262,9 +1517,9 @@ R_p=k_p[M][M\cdot]_s
 
 \subsubsection{三类代表方法}
 \begin{itemize}
-  \item NMP：氮氧稳定自由基调聚法，机理直观，但单体适用范围较窄，常需较高温。
-  \item ATRP：原子转移可逆失活，单体适用广，需金属络合催化体系。
-  \item RAFT：可逆加成-裂解-链转移法，条件接近传统自由基聚合，适用单体范围广。
+  \item NMP：氮氧稳定自由基调聚法，机理直观，最早实现“活性”自由基聚合；但单体适用范围较窄，常需较高温。
+  \item ATRP：原子转移可逆失活，适用于多数苯乙烯类、丙烯酸酯和甲基丙烯酸酯单体，但需金属络合催化体系并处理金属残留。
+  \item RAFT：可逆加成-裂解-链转移法，条件最接近传统自由基聚合，适用单体范围最广，但RAFT试剂常有颜色、气味且对光热较敏感。
 \end{itemize}
 
 \subsubsection{共同特征}
@@ -1280,54 +1535,111 @@ R_p=k_p[M][M\cdot]_s
   \item RAFT中主要为可逆链转移，常见一定缓聚现象与中间态自由基稳定化有关。
 \end{itemize}
 
+\subsubsection{动力学与局限补充}
+\begin{itemize}
+  \item NMP和ATRP通过可逆失活使活性自由基浓度维持在极低水平，因此聚合速率通常慢于传统自由基聚合。
+  \item RAFT原则上不改变传统自由基聚合速率方程的基本形式，但中间态自由基可能引起缓聚。
+  \item “活性”自由基聚合并非真正零终止体系，仍可能存在约$10\%$左右死聚物，因此只是接近活性聚合。
+  \item 若希望$\bar{X}_w/\bar{X}_n$进一步接近1，通常需要足够多的激活/失活循环。
+\end{itemize}
+
 \subsection{聚合方法及重要的自由基聚合产物}
 \subsubsection{概述}
-工业自由基聚合主要包括：本体聚合、溶液聚合、沉淀/分散聚合、悬浮聚合和乳液聚合。
+工业自由基聚合主要包括：本体聚合、溶液聚合、沉淀/分散聚合、悬浮聚合和乳液聚合。实际选择时，要在产品性能、过程安全、传热控温和成本之间折中。
 
 \subsubsection{本体聚合}
+本体聚合是不加其他介质、只有单体本身在引发剂、热或光作用下进行的聚合。基本组分通常只有单体和能溶于单体的引发剂，聚合场所就在本体内。
 \begin{itemize}
   \item 优点：产品纯净、设备相对简单、可连续化。
-  \item 缺点：体系黏度高、传热困难、易自动加速与爆聚。
-  \item 典型产品：GPPS、SAN、R-SMA、HIPS、ABS、PMMA、LDPE。
+  \item 缺点：体系黏度高、传热困难、易出现凝胶效应、自动加速与爆聚。
+  \item 苯乙烯连续本体（共）聚合是GPPS、SAN、R-SMA、HIPS、ABS的重要工业路线，常采用多釜串联、逐步升温并辅以脱挥。
+  \item MMA间歇本体聚合制PMMA时，常先预聚到一定黏度后再转入模板中缓慢聚合，最后升温后聚合以减少残余单体。
+  \item 乙烯高压本体聚合制LDPE需在高温高压下进行，链转移到大分子显著，故产物支链多、密度低、结晶度较低。
 \end{itemize}
 
 \subsubsection{溶液聚合}
+真正的溶液聚合属于均相聚合：单体、引发剂、溶剂与生成的聚合物都溶于同一相中。
 \begin{itemize}
   \item 优点：易撤热控温，可减弱自动加速。
   \item 缺点：聚合速率偏慢，溶剂回收能耗高，易发生向溶剂链转移。
-  \item 典型应用：腈纶纺丝液、PVAc/EVA体系、涂料树脂溶液。
+  \item 多用于聚合物溶液可直接使用的场合，如腈纶纺丝液、PVAc/EVA体系、涂料树脂溶液。
+  \item 丙烯腈连续溶液共聚可直接制得腈纶纺丝液，故称“一步法腈纶”；VAc在甲醇中聚合得PVAc后再醇解可得PVA，继续缩醛化可得维尼纶。
+  \item VAc与乙烯的溶液共聚可制EVA溶液，进一步醇解后得到EVOH阻隔材料。
 \end{itemize}
 
 \subsubsection{沉淀或分散聚合}
-引发剂与单体在介质中互溶，但聚合物不溶，产物易分离纯化。典型体系：丙烯腈水相沉淀聚合、TFE分散聚合（PTFE）。
+引发剂、单体和介质互溶，但生成的聚合物不溶于介质。与溶液聚合相比，其优点是聚合物易于分离、洗涤和纯化；颗粒相本身也可能成为重要反应场所。
+\begin{itemize}
+  \item 丙烯腈水相沉淀聚合是“二步法腈纶”的基础路线，常在水中连续共聚后得到淤浆，再分离、干燥并送纺丝厂重新溶解纺丝。
+  \item TFE分散聚合制PTFE时，体系虽加入少量表面活性剂，但其浓度低于CMC，主要作用是防止粒子聚并，因此习惯上仍称分散聚合而非真正乳液聚合。
+\end{itemize}
 
 \subsubsection{悬浮聚合}
 \begin{itemize}
   \item 组分：单体、油溶性引发剂、水、分散剂。
-  \item 反应场所在单体液滴中，动力学近似本体聚合。
-  \item 典型产品：PVC悬浮树脂、EPS珠粒等。
+  \item 反应场所在单体液滴中，因此每个液滴都近似于一个微型本体聚合反应器，动力学近似本体聚合。
+  \item 液滴粒径取决于搅拌剪切力、界面张力与分散剂的共同作用；搅拌越强，颗粒一般越细。
+  \item 颗粒形态还受分散剂种类和浓度、水油比、聚合温度、引发剂用量与单体结构影响。
+  \item 常用分散剂包括PVA、明胶、纤维素、淀粉以及滑石粉、高岭土等无机细粒。
+  \item 典型产品：PVC悬浮树脂、PS珠粒和发泡聚苯乙烯（EPS）等。
 \end{itemize}
 
 \subsubsection{乳液聚合}
 \begin{itemize}
-  \item 组分：油溶性单体、水溶性引发剂、水、乳化剂。
-  \item 反应场所：增溶胶束或乳胶粒。
-  \item 特点：传热好、速率快、可得高分子量，部分乳液可直接应用。
+  \item 组分：通常为油溶性单体、水、水溶性引发剂和乳化剂，体系多为O/W型。
+  \item 反应场所：增溶胶束或乳胶粒，而不是单体液滴本身。
+  \item 优点：传热控温好、聚合速率快、可得较高分子量，部分胶乳可直接使用。
+  \item 缺点：制得固体产品时后处理较麻烦，乳化剂也较难彻底除尽。
 \end{itemize}
-经典乳液聚合分三阶段：
+
+\subsubsection{乳化剂与乳化作用}
+\begin{itemize}
+  \item 常见乳化剂分为阴离子型、阳离子型、两性型和非离子型；乳液聚合中最常用的是阴离子型，非离子型多作配合乳化剂。
+  \item 阴离子乳化剂的两个高频参数是CMC和三相平衡点：经典乳液聚合要求乳化剂浓度高于CMC，聚合温度高于三相平衡点。
+  \item 非离子乳化剂常用HLB值和浊点描述性能；O/W型乳液聚合常需HLB在$8\sim18$之间，且聚合温度应低于浊点。
+  \item 乳化剂的本质作用是降低界面张力并稳定液滴、胶束和乳胶粒，使体系难以分层。
+\end{itemize}
+
+\subsubsection{乳液聚合机理与动力学}
+经典乳液聚合中，加入浓度高于CMC的乳化剂后，体系通常包含单体液滴、增溶胶束和水相中少量溶解单体三相。成核可分两类：
+\begin{itemize}
+  \item 胶束成核：适用于水溶性较小的单体，如苯乙烯。
+  \item 均相成核：适用于水溶性较大的单体，如醋酸乙烯酯。
+\end{itemize}
+按乳胶粒数和速率变化，经典乳液聚合分三阶段：
 \begin{enumerate}[1)]
   \item 成核期：乳胶粒数增加，$R_p$上升；
   \item 恒速期：乳胶粒数近恒定，$R_p$近恒定；
   \item 降速期：单体液滴耗尽后，$R_p$下降。
 \end{enumerate}
+恒速期动力学常写作：
+\[
+R_p=\frac{k_p[M]N\bar{n}}{N_A}
+\]
+\[
+\bar{X}_n\approx \frac{k_p[M]N\bar{n}}{\rho}
+\]
+其中$N$为单位体积中的乳胶粒数，$\bar{n}$为每个乳胶粒中的平均自由基数，$\rho$为总自由基生成速率。经典$0$-$1$态模型认为胶粒很小，只能容纳$0$个或$1$个自由基，因此常有$\bar{n}\approx0.5$。这说明：
+\begin{itemize}
+  \item 乳液聚合中$N$极大，因此在较高聚合速率下仍可保持较低的局部自由基终止概率；
+  \item $N$通常随乳化剂用量和自由基生成速率增加而增大；
+  \item 提高乳胶粒数$N$，往往可以同时提高聚合速率和聚合度，这是乳液聚合与其他方法的重要差异。
+\end{itemize}
 
 \subsubsection{乳液聚合应用与进展}
 \begin{itemize}
-  \item 传统应用：合成橡胶胶乳、ABS/MBS改性体系、涂料和胶黏剂胶乳。
-  \item 新技术：种子乳液、核壳乳液、活性乳液、细乳液、微乳液、反相乳液、无皂乳液等。
+  \item 传统应用：合成橡胶胶乳、ABS/MBS改性体系、PVC糊树脂，以及可直接使用的PVAc、丙烯酸酯类涂料和胶黏剂胶乳。
+  \item 种子乳液聚合：先制备小粒径种子，再溶胀后继续聚合，可把粒径由常规的$100\sim150\,\mathrm{nm}$放大到微米级。
+  \item 核壳乳液聚合：可制得软核硬壳或硬核软壳粒子，常用于ABS高接枝粉和高性能涂料。
+  \item 活性乳液聚合：利用乳胶粒的“隔离效应”抑制双基终止，有利于兼顾较高速率与较高分子量，但需防止乳液失稳。
+  \item 细乳液聚合：通过强剪切把单体分散成$30\sim500\,\mathrm{nm}$液滴，液滴本身就是反应场所，适于制功能性胶乳。
+  \item 微乳液聚合：单体含量低、乳化剂含量高，最终粒径更小，润湿、流平和渗透性能突出。
+  \item 反相乳液聚合：先形成W/O乳液后聚合，常用于丙烯酰胺等水溶性单体。
+  \item 无皂乳液聚合：利用引发剂残基或极性共单体使聚合物自身带表面活性，可得到表面洁净、粒径分布窄的功能微球。
 \end{itemize}
 
 \paragraph{本章复习主线}
 建议按“单体选择性$\rightarrow$基元反应$\rightarrow$速率与聚合度$\rightarrow$分布与阻聚$\rightarrow$可控自由基聚合$\rightarrow$工业方法”六步回顾。
 
 \end{document}
+
