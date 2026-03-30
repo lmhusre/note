@@ -1,0 +1,233 @@
+{
+  "main": {
+    "id": "e888e00a0e9118ee",
+    "type": "split",
+    "children": [
+      {
+        "id": "71f33f57e349cb96",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dc522802a713bd19",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "新标签页"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3e727dcf1ffc213a",
+    "type": "split",
+    "children": [
+      {
+        "id": "4dd2240a521211a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dae29e4655f5d40f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "83216f19d3bdf398",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "2839cda15bad581d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "538bdca011cc7546",
+    "type": "split",
+    "children": [
+      {
+        "id": "364abafce81ddaca",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "27ad1c9caf4003a1",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "30b313fa2810b836",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "出链"
+            }
+          },
+          {
+            "id": "90f5293834e3f54e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "ff83175a1882e909",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "b508d2524dfb41ce",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "大纲"
+            }
+          },
+          {
+            "id": "559e6f5c4ab00b9a",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "obsidian-excalidraw-plugin:New drawing": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-importer:Open Importer": false
+    }
+  },
+  "active": "dc522802a713bd19",
+  "lastOpenFiles": [
+    "材料成型基础/out/材料成型基础.pdf",
+    "未命名.canvas",
+    "分析化学/out/Drawing 2026-03-29 22.43.20.excalidraw.md",
+    "分析化学/out/分析化学.pdf",
+    "仪器分析/仪器分析.md",
+    "专英/UNIT2_Chain_Polymerization_中英对照全文.md",
+    "分析化学/第四章 酸碱滴定法（二）课件.pdf",
+    "分析化学/auxil/分析化学.pdf",
+    "仪器分析/readme.md",
+    "仪器分析/第二章 原子发射光谱法课件.pdf",
+    "高分子化学/readme.md",
+    "高分子化学/（第六版）第二章 缩聚合.pdf",
+    "专英/两篇聚合文章_专业词汇与词根词缀_优化整合版.pdf",
+    "创建链接.md",
+    "专英/两篇聚合文章_专业词汇与词根词缀_优化整合版.md",
+    "专英/UNIT2_Chain_Polymerization_中英对照全文.pdf",
+    "专英/readme.md",
+    "专英/Free_Radical_Vinyl_Polymerization_精编笔记.pdf",
+    "专英/Free_Radical_Vinyl_Polymerization_精编笔记.md",
+    "专英",
+    "仪器分析/第二章 原子发射光谱法课件.txt",
+    "高分子化学/figures/ch2_formula_only/pu_formula.png",
+    "高分子化学/figures/ch2_formula_only/uf_formula.png",
+    "高分子化学/figures/ch2_formula_only/psf_formula.png",
+    "高分子化学/figures/ch2_formula_only/pps_formula.png",
+    "高分子化学/figures/ch2_formula_only/ppo_formula.png",
+    "高分子化学/figures/ch2_formula_only/polyurea_formula.png",
+    "高分子化学/figures/ch2_formula_only/pi_formula.png",
+    "高分子化学/figures/ch2_formula_only/pf_formula.png",
+    "高分子化学/figures/ch2_formula_only/pet_formula.png",
+    "高分子化学/figures/ch2_formula_only/pc_formula.png",
+    "高分子化学/figures/readme.md",
+    "高分子化学/auxil/readme.md",
+    "分析化学/readme.md",
+    "材料成型基础/readme.md",
+    "两篇聚合文章_专业词汇与词根词缀_优化整合版.md",
+    "欢迎.md"
+  ]
+}

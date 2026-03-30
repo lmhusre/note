@@ -1,0 +1,167 @@
+\documentclass[12pt,a4paper]{article}
+\title{材料成型基础学习笔记}
+\author{李明翰}
+% =========================
+% 前处理（建议使用 XeLaTeX 编译）
+% =========================
+
+\usepackage[UTF8]{ctex}
+\usepackage{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{makecell} 
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{ragged2e}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{setspace}
+\usepackage{chemfig}
+\usepackage{tcolorbox}
+\usepackage[table]{xcolor}
+\usepackage{indentfirst}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usetikzlibrary{arrows.meta,positioning}
+\usetikzlibrary{patterns}
+\geometry{
+  left=2.5cm,
+  right=2.5cm,
+  top=2.5cm,
+  bottom=2.5cm
+}
+
+\setlength{\parindent}{2em}
+\linespread{1.3}
+\setlength{\parskip}{0.2em plus 0.1em minus 0.05em}
+\setlength{\textfloatsep}{10pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovedisplayskip}{8pt plus 2pt minus 4pt}
+\setlength{\belowdisplayskip}{8pt plus 2pt minus 4pt}
+\setlength{\abovedisplayshortskip}{6pt plus 2pt}
+\setlength{\belowdisplayshortskip}{6pt plus 2pt minus 3pt}
+\captionsetup{font=small,labelfont=bf,labelsep=space,skip=6pt}
+\renewcommand{\arraystretch}{1.18}
+\newcolumntype{Y}{>{\RaggedRight\arraybackslash}X}
+\newcolumntype{C}[1]{>{\Centering\arraybackslash}p{#1}}
+
+\titleformat{\section}{\raggedright\Large\bfseries}{\thesection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.6ex plus 0.6ex minus 0.2ex}{0.9ex plus 0.2ex}
+\titleformat{\subsection}{\raggedright\large\bfseries}{\thesubsection}{0.8em}{}
+\titlespacing*{\subsection}{0pt}{1.3ex plus 0.5ex minus 0.2ex}{0.7ex plus 0.2ex}
+\titleformat{\subsubsection}{\raggedright\normalsize\bfseries}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\subsubsection}{0pt}{1.0ex plus 0.4ex minus 0.1ex}{0.5ex plus 0.1ex}
+
+\setlist[itemize]{
+  leftmargin=2.4em,
+  itemsep=0.25em,
+  topsep=0.45em,
+  parsep=0pt,
+  partopsep=0pt
+}
+\setlist[enumerate]{
+  leftmargin=2.6em,
+  itemsep=0.25em,
+  topsep=0.45em,
+  parsep=0pt,
+  partopsep=0pt
+}
+
+\tcbset{
+  colback=yellow!8,
+  colframe=red!55!black,
+  boxrule=0.6pt,
+  arc=1mm,
+  left=1mm,
+  right=1mm,
+  top=0.8mm,
+  bottom=0.8mm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\nouppercase{\leftmark}}
+\fancyhead[R]{材料成型基础学习笔记}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\sectionmark}[1]{\markboth{\thesection\ #1}{}}
+\setlength{\headheight}{15pt}
+
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{5}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.8}
+
+\allowdisplaybreaks[2]
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\emergencystretch=2em
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{金属材料技术基础}
+\subsection{金属材料的主要性能}
+\subsubsection{材料的力学性能}
+在外力的作用下材料所表现出的抵抗能力称为材料的力学性能。常见的力学性能指标包括：
+\begin{itemize}
+  \item 拉伸曲线：材料在拉伸试验中表现出的应力-应变关系，反映了材料的弹性和塑性行为。
+  \subitem 拉伸曲线静拉力作用下，对式样缓慢地轴向拉伸直到拉断
+  \subitem 应力应变曲线：$$\sigma=\frac{F}{A},\varepsilon=\frac{\Delta L}{L_0} $$
+  \item 强度：材料抵抗外力作用而不发生破坏的能力，常用的强度指标包括屈服强度、抗拉强度和抗压强度。
+   \subitem 屈服强度：材料发生明显塑性变形时的最小应力值。大多数用条件屈服强度来表示，即材料在拉伸试验中达到0.2\%永久变形时的应力值。
+   \subitem 抗拉强度：材料在拉伸试验中达到的最大应力值。
+   \subitem 抗压强度：材料在压缩试验中达到的最大应力值。
+  \item 塑性：材料在断裂前发生永久变形的能力。
+  \subitem 伸长率：材料在拉伸试验中断裂时的总伸长量与原始长度的比值，通常用百分数表示。
+  \subitem 断面收缩率：材料在拉伸试验中断裂时断面面积的减少程度，通常用百分数表示。
+   \item 硬度：材料在一个小体积内抵抗变形和破坏的能力，常用的硬度测试方法包括布氏硬度、洛氏硬度和维氏硬度。
+   \subitem 布氏硬度：用一个钢球或碳化物球压入材料表面，测量压痕直径来计算硬度值。
+   \subitem 洛氏硬度：用一个金属锥或钢球压入材料表面，根据压入深度来计算硬度值。
+   \subitem 维氏硬度：用一个金字塔形金刚石压头压入材料表面，测量压痕对角线长度来计算硬度值。
+  \item 冲击韧性：材料在受到突然冲击载荷时抵抗断裂的能力，常用夏比冲击试验来评估。
+   \subitem 夏比冲击试验：将一个带有缺口的试样放在支架上，用一个摆锤撞击试样，测量摆锤吸收的能量来评估材料的韧性。
+   $$A_k=W_{H_1-H_2}$$
+   $$a_K=\frac{A_k}{S_N}$$
+  \item 疲劳强度：材料在循环应力和应变的作用下，经过一定的循环次数之后产生裂纹并最终断裂的能力。
+   \subitem 疲劳试验：对材料进行反复加载和卸载，记录材料在不同应力水平下的寿命（循环次数），绘制S-N曲线来评估疲劳强度。
+\end{itemize}
+\subsubsection{材料的其他性能}
+\begin{itemize}
+  \item 物理性能
+   \subitem 密度：材料单位体积的质量，通常用$\rho$表示，单位为kg/m³。
+   \subitem 熔点：材料从固态转变为液态的温度，通常用$T_m$表示，单位为摄氏度或开尔文。
+   \subitem 导热性：材料传导热量的能力，通常用热导率$k$表示，单位为W/(m·K)。
+   \subitem 电导性：材料传导电流的能力，通常用电导率$\sigma$表示，单位为S/m。
+   \subitem 磁性能：材料在磁场中的行为，包括磁导率、矫顽力和剩磁等指标。
+  \item 化学性能
+   \subitem 腐蚀性：材料在特定环境中发生化学反应导致性能下降的能力，常用腐蚀速率来评估。
+   \subitem 氧化性：材料在高温下与氧气反应形成氧化物的能力，通常用氧化速率来评估。
+  \item 工艺性能：铸造性能，焊接性能，热处理性能，切削加工性能等。
+\end{itemize}
+\subsection{铁碳合金的状态相图}
+\subsubsection{金属的结晶}
+\paragraph{晶体的概念}原子有规则排列形成的物质，有一定熔点，各向异性。
+\paragraph{金属的晶体结构}
+常见金属的晶体结构：体心立方晶格，面心立方晶格。
+\paragraph{纯铁的一次结晶}
+\paragraph{金属的结晶过程}
+\paragraph{晶粒以及细化晶粒的办法}
+\paragraph{纯铁的同素异构转变}
+\subsubsection{铁碳合金的基本组织}
+\subsection{钢的分类和编号}
+\subsection{钢的热处理}
+
+\end{document}

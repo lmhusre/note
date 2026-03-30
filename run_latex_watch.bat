@@ -2,8 +2,8 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 if "%~1"=="" (
-    echo [ERROR] 请把 .tex 文件拖到这个 bat 上，或在命令行传入 tex 文件路径
-    echo 用法：
+    echo [ERROR] Please pass a .tex file path.
+    echo Usage:
     echo   run_latex_watch.bat "D:\paper\main.tex"
     echo   run_latex_watch.bat "D:\paper\main.tex" --once
     echo   run_latex_watch.bat "D:\paper\main.tex" --verbose
@@ -14,12 +14,19 @@ if "%~1"=="" (
 set "TEXFILE=%~1"
 set "EXTRA_ARGS=%2 %3 %4 %5 %6 %7 %8 %9"
 set "EXITCODE=1"
+set "PYTHON_EXE="
+
+for /f "delims=" %%D in ('dir /b /ad /o-n "%LocalAppData%\Programs\Python\Python*" 2^>nul') do (
+    if exist "%LocalAppData%\Programs\Python\%%D\python.exe" (
+        set "PYTHON_EXE=%LocalAppData%\Programs\Python\%%D\python.exe"
+        goto :run_python
+    )
+)
 
 where python >nul 2>nul
 if %errorlevel%==0 (
-    python "%~dp0build_tex_watch.py" "%TEXFILE%" --engine xelatex --outdir out --auxdir auxil %EXTRA_ARGS%
-    set "EXITCODE=!errorlevel!"
-    goto :end
+    set "PYTHON_EXE=python"
+    goto :run_python
 )
 
 where py >nul 2>nul
@@ -29,9 +36,14 @@ if %errorlevel%==0 (
     goto :end
 )
 
-echo [ERROR] 未找到 python 或 py 启动器
+echo [ERROR] No usable Python launcher was found.
 pause
 set "EXITCODE=1"
+goto :end
+
+:run_python
+"%PYTHON_EXE%" "%~dp0build_tex_watch.py" "%TEXFILE%" --engine xelatex --outdir out --auxdir auxil %EXTRA_ARGS%
+set "EXITCODE=!errorlevel!"
 
 :end
 endlocal & exit /b %EXITCODE%
