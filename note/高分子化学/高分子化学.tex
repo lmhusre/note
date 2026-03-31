@@ -1283,6 +1283,26 @@ k_{p1}=k_{p2}=\cdots=k_p
   \end{tabularx}
   }
 \end{table}
+常见课堂高频引发剂的实务特征可进一步记为：
+\begin{table}[!htbp]
+  \centering
+  \caption{第三章高频引发剂实务对照}
+  {\small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{C{2.2cm}C{1.9cm}C{2.2cm}Y}
+    \toprule
+    \rowcolor{blue!6}
+    \textbf{引发剂} & \textbf{典型活性} & \textbf{溶解性/体系} & \textbf{复习要点} \\
+    \midrule
+    AIBN & 低 & 油溶性，本体/溶液常见 & 一级分解，放$\mathrm{N_2}$，诱导分解不明显。 \\
+    BPO & 低 & 油溶性，本体/悬浮常见 & 过氧类经典代表，常用于苯乙烯类体系。 \\
+    过硫酸盐（KSP/ASP） & 中到高（温度相关） & 水溶性，乳液/水溶液常见 & 可单独使用，也常与还原剂组成氧化-还原体系。 \\
+    氧化-还原体系 & 低温高效 & 水相/油相均可设计 & 自由基来自电子转移，活化能低，适合低温快速引发。 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
 
 \subsubsection{氧化-还原引发体系}
 由氧化剂与还原剂构成，自由基来源于电子转移，活化能低，可低温引发。
@@ -1378,6 +1398,9 @@ R_p=-\frac{d[M]}{dt}=\frac{d[P]}{dt}
 C=\frac{[M]_0-[M]}{[M]_0}\times100\%
 \]
 典型$C$-$t$曲线呈$S$形，可分诱导期、初期（近匀速）、中期（自动加速）、后期（减速）。
+\begin{itemize}
+  \item 若体系纯度较高且几乎无阻聚杂质，诱导期可明显缩短，甚至不明显。
+\end{itemize}
 
 \subsubsection{微观聚合动力学的研究方法}
 \begin{itemize}
@@ -1402,6 +1425,31 @@ R_p=k_p[M][M\cdot]=k_p\left(\frac{fk_d}{k_t}\right)^{1/2}[I]^{1/2}[M]
 \[
 R_p\propto [I]^{1/2}[M]
 \]
+
+\subsubsection{不同引发机理下速率方程（复习补充）}
+在稳态假设与长链假设下，自由基聚合速率的一般形式可写为：
+\[
+R_p=k_p[M][M\cdot],\qquad R_i=R_t=2k_t[M\cdot]^2
+\]
+不同引发路径的核心差异体现在$R_i$对体系变量的依赖。常见幂次关系可归纳为：
+\begin{table}[!htbp]
+  \centering
+  \caption{常见引发机理下的速率表达（幂次速记）}
+  {\small
+  \setlength{\tabcolsep}{6pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{C{3.3cm}Y Y}
+    \toprule
+    \rowcolor{blue!6}
+    \textbf{情形} & \textbf{典型引发速率形式} & \textbf{聚合速率幂次关系} \\
+    \midrule
+    常规引发剂分解引发 & $R_i\propto [I]$ & $R_p\propto [I]^{1/2}[M]$ \\
+    单体自由基形成为慢步骤 & $R_i\propto [I][M]$ & $R_p\propto [I]^{1/2}[M]^{3/2}$ \\
+    光/辐射引发（记有效引发强度为$\Psi$） & $R_i\propto \Psi$ & $R_p\propto \Psi^{1/2}[M]$ \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
 
 \subsubsection{基元反应速率常数与速率范围}
 \begin{itemize}
@@ -1527,6 +1575,25 @@ R_i=\frac{n[Z]_0}{t_i}
   \item 链转移型：酚类、芳胺类等，通过夺氢形成低活性自由基。
   \item 氧在低温（常以$100^\circ\mathrm{C}$以下讨论）多表现为阻聚剂，而高温下也可能参与引发过程。
 \end{itemize}
+\begin{table}[!htbp]
+  \centering
+  \caption{阻聚剂类型与作用机理对照}
+  {\small
+  \setlength{\tabcolsep}{6pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{C{2.4cm}Y Y}
+    \toprule
+    \rowcolor{blue!6}
+    \textbf{类型} & \textbf{主要机理} & \textbf{代表与复习提示} \\
+    \midrule
+    稳定自由基型 & 与链自由基偶联，生成低活性或非活性物种 & DPPH、TEMPO类；常用于引发速率测定。 \\
+    变价金属盐型 & 通过电子转移使自由基失活 & $\mathrm{FeCl_3}$等；常见于分析与阻聚实验。 \\
+    加成型 & 直接与双键自由基加成，终止增长活性 & 氧、醌类、硝基化合物等；氧的温度效应要特别记。 \\
+    链转移型 & 夺氢形成稳定自由基，降低链增长概率 & 酚类、芳胺类；常兼具缓聚行为。 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
 
 \subsubsection{自阻聚现象}
 烯丙基单体常表现出明显自阻聚：链转移倾向大于链增长（$k_{tr}\gg k_p$），故聚合速率低、产物分子量低。
@@ -1580,6 +1647,24 @@ R_p=k_p[M][M\cdot]_s
   \item “活性”自由基聚合并非真正零终止体系，仍可能存在约$10\%$左右死聚物，因此只是接近活性聚合。
   \item 若希望$\bar{X}_w/\bar{X}_n$进一步接近1，通常需要足够多的激活/失活循环。
 \end{itemize}
+\begin{table}[!htbp]
+  \centering
+  \caption{NMP、ATRP、RAFT三类可控自由基聚合对照}
+  {\small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.2}
+  \begin{tabularx}{\textwidth}{C{1.5cm}C{2.5cm}C{2.6cm}Y}
+    \toprule
+    \rowcolor{blue!6}
+    \textbf{方法} & \textbf{核心控制步骤} & \textbf{优点} & \textbf{局限与注意} \\
+    \midrule
+    NMP & 烷氧胺可逆解离/复合 & 机理直观、体系较简洁 & 常需较高温，单体适用范围较窄。 \\
+    ATRP & 卤原子转移可逆激活/失活 & 适用单体广，结构设计能力强 & 金属配合物残留与后处理是重点。 \\
+    RAFT & 可逆加成-裂解链转移 & 条件接近常规自由基聚合，兼容性强 & 试剂颜色/气味明显，部分体系有缓聚。 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
 
 \subsection{聚合方法及重要的自由基聚合产物}
 \subsubsection{概述}
@@ -1670,6 +1755,24 @@ R_p=k_p[M][M\cdot]_s
   \item 恒速期：乳胶粒数近恒定，$R_p$近恒定；
   \item 降速期：单体液滴耗尽后，$R_p$下降。
 \end{enumerate}
+\begin{table}[!htbp]
+  \centering
+  \caption{经典乳液聚合三阶段特征}
+  {\small
+  \setlength{\tabcolsep}{5pt}
+  \renewcommand{\arraystretch}{1.22}
+  \begin{tabularx}{\textwidth}{C{1.7cm}C{2.0cm}C{1.7cm}Y C{1.8cm}}
+    \toprule
+    \rowcolor{blue!6}
+    \textbf{阶段} & \textbf{乳胶粒数} & \textbf{胶束} & \textbf{单体液滴} & \textbf{$R_p$变化} \\
+    \midrule
+    成核期 & 增加 & 减少并最终消失 & 数量近恒，体积逐步缩小 & 上升 \\
+    恒速期 & 近恒 & 无 & 继续减少至消失 & 近恒 \\
+    降速期 & 近恒 & 无 & 无 & 下降 \\
+    \bottomrule
+  \end{tabularx}
+  }
+\end{table}
 恒速期动力学常写作：
 \[
 R_p=\frac{k_p[M]N\bar{n}}{N_A}
